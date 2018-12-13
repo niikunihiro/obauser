@@ -1,0 +1,22 @@
+syntax = "proto3";
+package niixo.obauser.v1;
+
+option go_package = "github.com/niixo/obauser/rpc";
+
+service UserApi {
+    rpc GetUser (GetUserRequest) returns (User) {}
+    rpc CreateUser (CreateUserRequest) returns (User) {}
+}
+
+message GetUserRequest {
+    int32 user_id = 1;
+}
+
+message CreateUserRequest {
+    string user_name = 1;
+}
+
+message User {
+    uint32 user_id = 1;
+    string user_name = 2;
+}
