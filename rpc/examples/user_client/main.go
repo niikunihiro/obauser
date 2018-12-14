@@ -22,7 +22,7 @@ func main() {
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := c.GetUser(ctx, &pb.GetUserRequest{})
+	r, err := c.GetUser(ctx, &pb.GetUserRequest{UserId: 1})
 	if err != nil {
 		log.Fatalf("could not get user: %v", err)
 	}
